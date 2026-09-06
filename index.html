@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>マイホームページ | チョウ　メイテツ</title>
+  <style>
+    /* ベーススタイル（目に優しい浅土灰色・グレージュ調） */
+    :root {
+      --primary-color: #6b705c;
+      --text-color: #33322e;
+      --bg-color: #eae6e1;      /* 浅土灰色 / グレージュ */
+      --card-bg: #f8f6f2;    /* 落ち着いた暖かみのある白 */
+      --border-color: #dad5cd;
+      --accent-color: #b58369;
+      --active-tab-bg: #6b705c;
+      --active-tab-text: #ffffff;
+    }
+
+    body {
+      font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+      line-height: 1.8;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    /* ヘッダー */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 30px;
+      padding: 20px 0;
+    }
+
+    .header-logo {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--primary-color);
+      flex-shrink: 0;
+      background-color: var(--card-bg);
+    }
+
+    .header-text {
+      text-align: left;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      color: #21201d;
+      margin: 0 0 4px 0;
+    }
+
+    .subtitle {
+      color: #6e6a63;
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    /* セクション＆カード */
+    section {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      border: 1px solid var(--border-color);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 8px;
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #21201d;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: #423f3a;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    /* タブUIのスタイル */
+    .tab-container {
+      margin-top: 20px;
+    }
+
+    .tab-buttons {
+      display: flex;
+      gap: 8px;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 0;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      background-color: #e3ded6;
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+      border-bottom: none;
+      padding: 10px 18px;
+      border-radius: 8px 8px 0 0;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: bold;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn:hover {
+      background-color: #d6cfc5;
+    }
+
+    .tab-btn.active {
+      background-color: var(--active-tab-bg);
+      color: var(--active-tab-text);
+      border-color: var(--active-tab-bg);
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* メディア表示エリア */
+    .media-wrapper {
+      width: 100%;
+      background-color: #2b2a28;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 320px;
+      max-height: 500px;
+    }
+
+    .media-wrapper img, 
+    .media-wrapper video {
+      max-width: 100%;
+      max-height: 500px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .media-caption {
+      margin-top: 12px;
+      font-size: 0.9rem;
+      color: #55514a;
+      background: #eeeae4;
+      padding: 10px 14px;
+      border-radius: 6px;
+    }
+
+    /* フッター */
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      color: #8c877d;
+      font-size: 0.85rem;
+    }
+
+    /* レスポンシブ対応 */
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 12px;
+        margin: 20px auto;
+      }
+      header {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+      }
+      .header-text {
+        text-align: center;
+      }
+      section {
+        padding: 20px;
+      }
+      .tab-btn {
+        flex: 1 1 auto;
+        text-align: center;
+        padding: 8px 10px;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- ヘッダー -->
+    <header>
+      <img src="img/11.jpeg" alt="ロゴ・アバター" class="header-logo" onerror="this.src='https://placehold.co/140x140/6b705c/ffffff?text=Logo'">
+      <div class="header-text">
+        <h1>[お名前] の個人ページ</h1>
+        <p class="subtitle">Welcome to my personal homepage</p>
+      </div>
+    </header>
+
+    <main>
+      <!-- ご挨拶セクション -->
+      <section>
+        <h2>はじめましてのご挨拶</h2>
+        <p>
+          当サイトをご覧いただきありがとうございます。チョウ　メイテツと申します。<br>
+          好きなものや日常の様子を気ままに記録しているページです。どうぞごゆっくりご覧ください。
+        </p>
+      </section>
+
+      <!-- プロフィール・趣味セクション -->
+      <section>
+        <h2>プロフィール</h2>
+        <h3>■ 趣味・関心</h3>
+        <ul>
+          <li>高等数学・哲学</li>
+          <li>MOBAゲーム・FPSゲーム・ソウルライク</li>
+          <li>プログラミング</li>
+        </ul>
+      </section>
+
+      <!-- 猫ちゃん展示カード -->
+      <section>
+        <h2>友達の愛猫、大黒(4年前は小黒)</h2>
+        <p>友達のかわいい黒猫ちゃんの成長記録です。</p>
+
+        <div class="tab-container">
+          <!-- タブボタン -->
+          <div class="tab-buttons">
+            <button class="tab-btn active" onclick="switchTab(event, 'tab-4years')">4年前（画像）</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-now-1')">現在①（動画）</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-now-2')">現在②（動画）</button>
+          </div>
+
+          <!-- タブ1：4年前の画像 -->
+          <div id="tab-4years" class="tab-content active">
+            <div class="media-wrapper">
+              <img src="img/4.png" alt="4年前の猫ちゃんの写真" onerror="this.src='https://placehold.co/600x400/33322e/f8f6f2?text=4Years+Ago+Photo'">
+            </div>
+            <div class="media-caption">
+              📌 <strong>4年前の様子：</strong> テーブルの端からひょっこり顔を覗かせていた頃の可愛い一枚です。
+            </div>
+          </div>
+
+          <!-- タブ2：現在の動画① -->
+          <div id="tab-now-1" class="tab-content">
+            <div class="media-wrapper">
+
+              <video controls muted loop playsinline poster="https://placehold.co/600x400/33322e/f8f6f2?text=Video+1+Preview">
+                <source src="video/IMG_0499.MP4" type="video/mp4">
+                お使いのブラウザは動画再生に対応していません。
+              </video>
+            </div>
+            <div class="media-caption">
+              🎥 <strong>現在の様子①：</strong> なでなでされて気持ちよさそうに寛いでいる姿です。
+            </div>
+          </div>
+
+          <!-- タブ3：現在の動画② -->
+          <div id="tab-now-2" class="tab-content">
+            <div class="media-wrapper">
+              <video controls muted loop playsinline poster="https://placehold.co/600x400/33322e/f8f6f2?text=Video+2+Preview">
+                <source src="video/IMG_0501.MP4" type="video/mp4">
+                お使いのブラウザは動画再生に対応していません。
+              </video>
+            </div>
+            <div class="media-caption">
+              🎥 <strong>現在の様子②：</strong> くりっくりのお目目で見つめてくれる可愛い最新映像です。
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 更新予定・お知らせセクション -->
+      <section>
+        <h2>お知らせ・更新情報</h2>
+        <p>
+          🚧 <strong>コンテンツを順次更新中です！</strong><br>
+          新しい写真やコンテンツ、機能などを少しずつ追加・更新していく予定です。またのお越しをお待ちしております。
+        </p>
+      </section>
+    </main>
+
+    <!-- フッター -->
+    <footer>
+      <p>&copy; 2026 ZHANG MINGZHE. All Rights Reserved.</p>
+    </footer>
+
+  </div>
+
+  <!-- JavaScript：タブ切り替え処理 -->
+  <script>
+    function switchTab(event, tabId) {
+      // 全てのタブコンテンツを非表示にする
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(content => content.classList.remove('active'));
+
+      // 全てのタブボタンのアクティブ状態を解除する
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(button => button.classList.remove('active'));
+
+      // 選択されたタブとボタンをアクティブにする
+      document.getElementById(tabId).classList.add('active');
+      event.currentTarget.classList.add('active');
+
+      // 非表示になった動画を一時停止する
+      const videos = document.querySelectorAll('video');
+      videos.forEach(video => video.pause());
+    }
+  </script>
+
+</body>
+</html>
