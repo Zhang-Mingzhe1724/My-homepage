@@ -12,6 +12,16 @@
 
 ---
 
+## 📄 著作権・利用素材の情報 (Copyright & Assets)
+
+課題の提出ルールに基づき、掲載素材の権利情報を記載します。
+
+1. **猫の写真および動画 (`img/cat_4years.png`, `video/cat_1.mp4`, `video/cat_2.mp4`)**
+   * **権利情報**: 友人が撮影した素材であり、本Webサイトでの掲載許可を得て使用しています。
+2. **ロゴ・アイコン素材 (`img/logo.png`)**
+   * **権利情報**: 自作素材または権利フリーのアイコン素材を使用しています。
+
+---
 ## 🎨 デザインコンセプト & 配色
 
 長時間の閲覧でも目が疲れにくいよう、コントラストを抑えたナチュラルで落ち着いたトーン（アースカラー・グレージュ系）を採用しています。
@@ -48,6 +58,20 @@ my-homepage/
 │   ├── logo.png
 │   └── cat_4years.png
 ├── video/              # 動画素材フォルダ（猫動画）
-│   ├── IMG_0499.MP4
-│   └── IMG_0501.MP4
+│   ├── cat_1.mp4
+│   └── cat_2.mp4
 └── README.md           # 制作仕様書（本ファイル）
+```
+
+---
+## 🚀 閲覧方法
+
+### 1. Web上で閲覧する場合（GitHub Pages）
+以下のURLから、ブラウザで直接Webサイトをご覧いただけます。
+* **公開URL**: [https://zhang-mingzhe1724.github.io/my-homepage/](https://zhang-mingzhe1724.github.io/my-homepage/)
+
+### 2. ローカル環境（自分のPC）で閲覧する場合
+1. 本リポジトリをZIPダウンロード、または以下のコマンドでクローンします。
+   ```bash
+   git clone [https://github.com/Zhang-Mingzhe1724/my-homepage.git](https://github.com/Zhang-Mingzhe1724/my-homepage.git)
+   ```
