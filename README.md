@@ -68,10 +68,10 @@ my-homepage/
 
 ### 1. Web上で閲覧する場合（GitHub Pages）
 以下のURLから、ブラウザで直接Webサイトをご覧いただけます。
-* **公開URL**: [https://zhang-mingzhe1724.github.io/my-homepage/](https://zhang-mingzhe1724.github.io/my-homepage/)
+* **公開URL**: [https://zhang-mingzhe1724.github.io/My-homepage/](https://zhang-mingzhe1724.github.io/My-homepage/)
 
 ### 2. ローカル環境（自分のPC）で閲覧する場合
 1. 本リポジトリをZIPダウンロード、または以下のコマンドでクローンします。
    ```bash
-   git clone [https://github.com/Zhang-Mingzhe1724/my-homepage.git](https://github.com/Zhang-Mingzhe1724/my-homepage.git)
+   git clone [https://github.com/Zhang-Mingzhe1724/My-homepage.git](https://github.com/Zhang-Mingzhe1724/My-homepage.git)
    ```
